@@ -4,8 +4,12 @@ vidurkis <- aggregate(dat2[,7], list(dat2$Amžius..tikslinės.amžiaus.grupės.)
 
 ###########################################################################
 
-vyrai <- subset(dat, dat$Lytis=="Vyrai" & dat$Amžius..tikslinės.amžiaus.grupės.=="Iš viso pagal amžiaus grupes" & dat$Gyvenamoji.vietovė=="Miestas ir kaimas" ) ## Subsetinam pagal Vyrus
-moterys <- subset(dat, dat$Lytis=="Moterys" & dat$Amžius..tikslinės.amžiaus.grupės.=="Iš viso pagal amžiaus grupes" & dat$Gyvenamoji.vietovė=="Miestas ir kaimas" ) ## Same pagal moteris
+vyrai <- subset(dat, dat$Lytis=="Vyrai" &
+                        dat$Amžius..tikslinės.amžiaus.grupės.=="Iš viso pagal amžiaus grupes" &
+                        dat$Gyvenamoji.vietovė=="Miestas ir kaimas" ) ## Subsetinam pagal Vyrus
+moterys <- subset(dat, dat$Lytis=="Moterys" & 
+                        dat$Amžius..tikslinės.amžiaus.grupės.=="Iš viso pagal amžiaus grupes" & 
+                        dat$Gyvenamoji.vietovė=="Miestas ir kaimas" ) ## Same pagal moteris
 vidvyr <- aggregate(vyrai[,7], list(vyrai$Laikotarpis), mean) # Bereikalo, bet taip graziai gaunas listas :D
 vidmot <- aggregate(moterys[,7], list(moterys$Laikotarpis), mean) # same.
 plot(vidmot, type="l", col="blue", ## Piesiam grafika
